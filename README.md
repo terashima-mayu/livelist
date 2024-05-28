@@ -36,3 +36,18 @@
 
 ## 機能の実装方針予定
 - Spotify APIを使用してセットリスト順のプレイリストを作成
+
+## 技術スタック
+### サーバサイド
+- Ruby 3.2.2
+- Rails 7.1.3
+### フロントエンド
+- JavaScript
+### CSSフレームワーク
+- Bootstrap 
+### データベース
+- PostgreSQL
+### Web API
+- Spotify API
+### インフラ
+- Fly.io
