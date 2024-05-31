@@ -51,3 +51,6 @@
 - Spotify API
 ### インフラ
 - Fly.io
+
+##画面遷移図
+https://www.figma.com/design/fdxmMS8NNprEXDD81lm3RD/Portfolio?node-id=0-1&t=yOS16NimnyfUxXSw-1
