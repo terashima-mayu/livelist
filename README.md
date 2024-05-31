@@ -19,7 +19,7 @@
 - 記録したセットリストをSpotifyのプレイリストにし、ライブを振り返れる
 - 購入したグッズも記録でき、どのライブのグッズか記録できる
 
-## 機能候補
+## 機能候補　
 ### MVPリリース時
 - ユーザー登録機能
 - ログイン機能
@@ -52,5 +52,8 @@
 ### インフラ
 - Fly.io
 
-##画面遷移図
+## 画面遷移図
 https://www.figma.com/design/fdxmMS8NNprEXDD81lm3RD/Portfolio?node-id=0-1&t=yOS16NimnyfUxXSw-1
+
+## ER図
+![Alt text](Portfolio.png)
