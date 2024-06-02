@@ -56,4 +56,4 @@
 https://www.figma.com/design/fdxmMS8NNprEXDD81lm3RD/Portfolio?node-id=0-1&t=yOS16NimnyfUxXSw-1
 
 ## ER図
-![Alt text](Portfolio.png)
+![Alt text](Portfolio2.png)
