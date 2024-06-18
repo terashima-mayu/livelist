@@ -1,13 +1,19 @@
 <h1>Boards</h1>
 
-<%= link_to 'New Board', new_board_path %>
+<%= link_to 'New Board', new_board_path, class: 'btn btn-primary' %>
 
 <ul>
   <% @boards.each do |board| %>
-    <li>
-      <%= link_to board.name, board %>
-      <%= link_to 'Edit', edit_board_path(board) %>
-      <%= link_to 'Destroy', board, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <li class="board-card">
+      <h2><%= link_to board.name, board_path(board) %></h2>
+      <p><strong>アーティスト名:</strong> <%= board.artist %></p>
+      <p><strong>会場名:</strong> <%= board.venue %></p>
+      <p><strong>開催日時:</strong> <%= board.date_and_time.strftime("%Y-%m-%d") %></p>
+      <% if board.image.present? %>
+        
+      <% end %>
+      <%= link_to 'Edit', edit_board_path(board), class: 'btn btn-secondary' %>
+      <%= link_to 'Destroy', board, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
     </li>
   <% end %>
 </ul>
