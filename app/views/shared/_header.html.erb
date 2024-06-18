@@ -3,8 +3,11 @@
     <%= link_to 'LIVELIST', root_path, class: "navbar-brand" %>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><%= link_to 'ログアウト', logout_path, class: "nav-link", data: { turbo_method: :delete } %>
-        </div>
+        <li class="nav-item">
+          <%= link_to 'ライブ記録一覧', boards_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to 'ログアウト', logout_path, class: "nav-link", data: { turbo_method: :delete } %>
         </li>
       </ul>
     </div>
