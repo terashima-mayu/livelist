@@ -1,0 +1,40 @@
+<h1>新しいライブ記録を作成する</h1>
+
+<%= form_with(model: @board, local: true) do |form| %>
+  <div class="form-group">
+    <%= form.label :artist, "アーティスト名" %>
+    <%= form.text_field :artist, class: "form-control", placeholder: "アーティスト名を入力してください", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :date_and_time, "日付" %>
+    <%= form.date_field :date_and_time, class: "form-control", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :doors_open_time, "開場時間" %>
+    <%= form.time_field :doors_open_time, class: "form-control", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :show_start_time, "開演時間" %>
+    <%= form.time_field :show_start_time, class: "form-control", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :venue, "会場名" %>
+    <%= form.text_field :venue, class: "form-control", placeholder: "会場名を入力してください", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :name, "ライブ名" %>
+    <%= form.text_field :name, class: "form-control", placeholder: "ライブ名を入力してください", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :image, "画像アップロード" %>
+    <%= form.file_field :image, class: "form-control" %>
+  </div>
+
+  <%= form.submit "ライブ記録を作成する", class: "btn btn-primary" %>
+<% end %>

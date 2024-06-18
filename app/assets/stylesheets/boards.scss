@@ -1,0 +1,83 @@
+
+/* 全体のスタイル */
+/* 全体のスタイル */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+}
+
+/* ボードカードのスタイル */
+.board-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.board-card:hover {
+  transform: translateY(-5px);
+}
+
+.board-card h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.board-card p {
+  margin: 5px 0;
+}
+
+.board-card .btn {
+  margin-top: 10px;
+}
+
+/* 画像のスタイル */
+.board-card img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* ボタンのスタイル */
+.btn-primary {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+
+.btn-primary:hover {
+  background-color: #c9302c;
+  border-color: #ac2925;
+}
+
+.btn-secondary {
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+
+.btn-secondary:hover {
+  background-color: #31b0d5;
+  border-color: #269abc;
+}
+
+.btn-danger {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+
+.btn-danger:hover {
+  background-color: #c9302c;
+  border-color: #ac2925;
+}
