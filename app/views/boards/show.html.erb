@@ -1,7 +1,14 @@
-<h1><%= @board.name %></h1>
-
-<p><strong>アーティスト名:</strong> <%= @board.artist %></p>
-<p><strong>会場名:</strong> <%= @board.venue %></p>
-<p><strong>開催日時:</strong> <%= @board.date_and_time.strftime("%Y-%m-%d %H:%M") %></p>
-<p><strong>開場時間:</strong> <%= @board.date_and_time.strftime("%H:%M") %></p>
-<p><strong>開演時間:</strong> <%= @board.date_and_time.strftime("%H:%M") %></p>
+<ul>
+  <li class="show-card">
+  <h1><%= @board.name %></h1>
+    <p><strong>アーティスト名:</strong> <%= @board.artist %></p>
+    <p><strong>会場名:</strong> <%= @board.venue %></p>
+    <p><strong>開催日時:</strong> <%= @board.date_and_time.strftime("%Y-%m-%d %H:%M") %></p>
+    <p><strong>開場時間:</strong> <%= @board.doors_open_time.strftime("%H:%M") %></p>
+    <p><strong>開演時間:</strong> <%= @board.show_start_time.strftime("%H:%M") %></p>
+    <% if @board.image.present? %>
+      <p><strong>画像:</strong><br>
+      <%= image_tag @board.image.url, class: 'img-thumbnail' %></p>
+    <% end %>
+  </li>
+</ul>
