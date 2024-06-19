@@ -1,6 +1,7 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 @import "boards";
+@import "show";
 
 html, body {
   height: 100%;
@@ -33,3 +34,4 @@ footer {
   position: relative;
   bottom: 0;
 }
+

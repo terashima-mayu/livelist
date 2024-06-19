@@ -17,9 +17,13 @@ class BoardsController < ApplicationController
     end
   end
 
+  def show
+    @board = current_user.boards.find(params[:id])
+  end
+
   private
 
   def board_params
-    params.require(:board).permit(:date_and_time, :artist, :venue, :name, :image, :doors_open_time, :show_start_time)
+    params.require(:board).permit(:date_and_time, :artist, :venue, :name, :image,:image_cache, :doors_open_time, :show_start_time)
   end
 end
