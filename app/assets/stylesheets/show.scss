@@ -70,4 +70,43 @@ ul {
   border-color: #ac2925;
 }
 
+/* セットリストのスタイル */
+.setlist {
+  margin-top: 20px;
+}
 
+.setlist-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.setlist ol {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.setlist li {
+  margin-bottom: 10px;
+}
+
+/* セットリスト入力フォームのスタイル */
+.setlist-form {
+  margin-top: 20px;
+}
+
+.setlist-form .field {
+  margin-bottom: 10px;
+}
+
+.setlist-form textarea {
+  width: 100%;
+  height: 100px;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.setlist-form .actions {
+  margin-top: 10px;
+}
