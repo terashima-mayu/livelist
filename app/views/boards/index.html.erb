@@ -1,6 +1,7 @@
-<h1>Boards</h1>
-
-<%= link_to 'New Board', new_board_path, class: 'btn btn-primary' %>
+<h1>
+  ライブ参戦記録
+  <%= link_to '追加', new_board_path, class: 'btn btn-primary' %>
+</h1>
 
 <ul>
   <% @boards.each do |board| %>
@@ -8,7 +9,7 @@
       <h2><%= link_to board.name, board_path(board) %></h2>
       <p><strong>アーティスト名:</strong> <%= board.artist %></p>
       <p><strong>会場名:</strong> <%= board.venue %></p>
-      <p><strong>開催日時:</strong> <%= board.date_and_time.strftime("%Y-%m-%d %H:%M") %></p>
+      <p><strong>開催日時:</strong> <%= board.date_and_time.strftime("%Y-%m-%d") %></p>
       <% if board.image.present? %>
         <p><strong>画像:</strong><br>
         <%= image_tag board.image.url, class: 'img-thumbnail' %></p>
