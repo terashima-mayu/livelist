@@ -1,7 +1,7 @@
 require 'rspotify'
 
 class BoardsController < ApplicationController
-  before_action :set_board, only: [:update_setlist, :add_setlist]
+  before_action :set_board, only: [:update_setlist, :add_setlist, :edit, :destroy]
 
   def index
     @boards = current_user.boards.all
@@ -28,6 +28,15 @@ class BoardsController < ApplicationController
     else
       @tracks = []
     end
+  end
+
+  def edit
+    @board = current_user.boards.find(params[:id])
+  end
+
+  def destroy
+    @board.destroy!
+    redirect_to boards_path
   end
 
   def add_setlist

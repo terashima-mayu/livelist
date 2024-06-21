@@ -2,20 +2,19 @@
   ライブ参戦記録
   <%= link_to '追加', new_board_path, class: 'btn btn-primary' %>
 </h1>
-
 <ul>
-  <% @boards.each do |board| %>
-    <li class="board-card">
-      <h2><%= link_to board.name, board_path(board) %></h2>
-      <p><strong>アーティスト名:</strong> <%= board.artist %></p>
-      <p><strong>会場名:</strong> <%= board.venue %></p>
-      <p><strong>開催日時:</strong> <%= board.date_and_time.strftime("%Y-%m-%d") %></p>
-      <% if board.image.present? %>
-        <p><strong>画像:</strong><br>
-        <%= image_tag board.image.url, class: 'img-thumbnail' %></p>
-      <% end %>
-      <%= link_to 'Edit', edit_board_path(board), class: 'btn btn-secondary' %>
-      <%= link_to 'Destroy', board, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-    </li>
-  <% end %>
+<% @boards.each do |board| %>
+  <li class="board-card">
+    <h2><%= link_to board.name, board_path(board) %></h2>
+    <p><strong>アーティスト名名:</strong> <%= board.artist %></p>
+    <p><strong>会場名:</strong> <%= board.venue %></p>
+    <p><strong>開催日時:</strong> <%= board.date_and_time.strftime("%Y-%m-%d") %></p>
+    <% if board.image.present? %>
+      <p><strong>画像:</strong><br>
+      <%= image_tag board.image.url, class: 'img-thumbnail' %></p>
+    <% end %>
+    <%= link_to 'Edit', edit_board_path(board), class: 'btn btn-secondary' %>
+    <%= link_to 'Delete', board_path(board), id: "button-delete-#{board.id}", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+  </li>
+<% end %>
 </ul>
