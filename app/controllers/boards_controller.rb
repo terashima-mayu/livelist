@@ -1,5 +1,8 @@
+require 'rspotify'
+
 class BoardsController < ApplicationController
-  before_action :set_board, only: [:update_setlist,:add_setlist]
+  before_action :set_board, only: [:update_setlist, :add_setlist]
+
   def index
     @boards = current_user.boards.all
   end
@@ -20,6 +23,11 @@ class BoardsController < ApplicationController
 
   def show
     @board = current_user.boards.find(params[:id])
+    if @board.setlist.present? && @board.artist.present?
+      @tracks = search_spotify_tracks(@board.artist, @board.setlist)
+    else
+      @tracks = []
+    end
   end
 
   def add_setlist
@@ -42,10 +50,25 @@ class BoardsController < ApplicationController
   end
 
   def board_params
-    params.require(:board).permit(:date_and_time, :artist, :venue, :name, :image,:image_cache, :doors_open_time, :show_start_time)
+    params.require(:board).permit(:date_and_time, :artist, :venue, :name, :image, :image_cache, :doors_open_time, :show_start_time, :setlist)
   end
 
   def setlist_params
     params.require(:board).permit(:setlist)
+  end
+
+  def search_spotify_tracks(artist_name, setlist)
+    tracks = []
+    setlist.split("\n").each do |song|
+      query = "#{song.strip} artist:#{artist_name.strip}"
+      results = RSpotify::Track.search(query)
+      
+      track = results.find do |t|
+        t.name.downcase.include?(song.strip.downcase) && 
+        t.artists.any? { |a| a.name.downcase.include?(artist_name.downcase) }
+      end
+      tracks << track if track
+    end
+    tracks
   end
 end

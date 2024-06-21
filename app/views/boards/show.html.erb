@@ -4,23 +4,36 @@
   <li class="show-card">
     <p><strong>アーティスト名:</strong> <%= @board.artist %></p>
     <p><strong>会場名:</strong> <%= @board.venue %></p>
-    <p><strong>開催日時:</strong> <%= @board.date_and_time.strftime("%Y-%m-%d %H:%M") %></p>
+    <p><strong>開催日時:</strong> <%= @board.date_and_time.strftime("%Y-%m-%d") %></p>
     <p><strong>開場時間:</strong> <%= @board.doors_open_time.strftime("%H:%M") %></p>
     <p><strong>開演時間:</strong> <%= @board.show_start_time.strftime("%H:%M") %></p>
-    <p><strong>セットリスト</strong></p>
     <% if @board.image.present? %>
       <p><strong>画像:</strong><br>
       <%= image_tag @board.image.url, class: 'img-thumbnail', size: '200x200' %></p>
     <% end %>
+    <p><strong>セットリスト:</strong></p>
     <% if @board.setlist.present? %>
       <ol>
-        <% @board.setlist.split("\n").each do |song| %>
+        <% @board.setlist.split("\n").each_with_index do |song, index| %>
           <li><%= song %></li>
         <% end %>
       </ol>
+      <% if @tracks.present? %>
+        <h3>Spotify Tracks</h3>
+        <ul>
+          <% @tracks.each do |track| %>
+            <li>
+              <%= link_to track.name, track.external_urls['spotify'], target: '_blank' %> by <%= track.artists.map(&:name).join(", ") %>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>Spotifyでトラックが見つかりませんでした。</p>
+      <% end %>
     <% else %>
       <p>セットリストがありません。</p>
     <% end %>
-    <%= link_to 'セットリストを追加', add_setlist_board_path(@board), class: 'btn btn-primary' %>
   </li>
 </ul>
+
+<%= link_to 'セットリストを追加', add_setlist_board_path(@board), class: 'btn btn-primary' %>
