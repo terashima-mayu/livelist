@@ -98,4 +98,5 @@ Rails.application.configure do
   config.hosts << "127.0.0.1"
   config.hosts << "0.0.0.0" # 必要に応じて
   config.hosts << "livelist.onrender.com" #
+  config.require_master_key = ENV["SECRET_KEY_BASE_DUMMY"].nil?
 end
