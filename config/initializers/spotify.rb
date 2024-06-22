@@ -4,3 +4,4 @@ if !(Rails.env.production? && ENV['ASSET_PRECOMPILATION'] == 'true')
 else
   Rails.logger.info "Skipping Spotify API authentication during asset precompilation"
 end
+
