@@ -1,6 +1,6 @@
-require 'rspotify'
-
 class BoardsController < ApplicationController
+  require 'rspotify'
+  RSpotify::authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_CLIENT_SECRET'])
   before_action :set_board, only: [:update_setlist, :add_setlist, :edit, :destroy]
 
   def index
