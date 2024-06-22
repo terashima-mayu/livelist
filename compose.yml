@@ -4,6 +4,9 @@ services:
     restart: always
     environment:
       TZ: Asia/Tokyo
+      RAILS_MASTER_KEY: 6c0ec12f77b41a746fc9e9bcd4e859c3
+      SPOTIFY_CLIENT_ID: d899c4cc4d62421a8b2437e3caeb129f
+      SPOTIFY_CLIENT_SECRET: 9adf01e9e17d44ab95e85fd8fddf677e
       POSTGRES_PASSWORD: password
     volumes:
       - postgresql_data:/var/lib/postgresql
