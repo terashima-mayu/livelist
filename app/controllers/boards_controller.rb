@@ -34,6 +34,15 @@ class BoardsController < ApplicationController
     @board = current_user.boards.find(params[:id])
   end
 
+  def update
+    @board = Board.find(params[:id])
+    if @board.update(board_params)
+      redirect_to board_path(@board)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+  
   def destroy
     @board.destroy!
     redirect_to boards_path
@@ -46,7 +55,7 @@ class BoardsController < ApplicationController
   def update_setlist
     @board = current_user.boards.find(params[:id])
     if @board.update(setlist_params)
-      redirect_to @board, notice: 'セットリストが更新されました。'
+      redirect_to @board
     else
       render :add_setlist, status: :unprocessable_entity
     end

@@ -14,7 +14,7 @@
       <%= image_tag board.image.url, class: 'img-thumbnail' %></p>
     <% end %>
     <%= link_to 'Edit', edit_board_path(board), class: 'btn btn-secondary' %>
-    <%= link_to 'Delete', board_path(board), id: "button-delete-#{board.id}", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+    <%= link_to 'Delete', board_path(board), id: "button-delete-#{board.id}", data: { turbo_method: :delete, turbo_confirm: '削除してよろしいですか?' }, class: 'btn btn-danger' %>
   </li>
 <% end %>
 </ul>
