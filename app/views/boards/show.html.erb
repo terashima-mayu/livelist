@@ -1,7 +1,6 @@
-<h1><%= @board.name %></h1>
-
 <ul>
   <li class="show-card">
+  <h1><%= @board.name %></h1>
     <p><strong>アーティスト名:</strong> <%= @board.artist %></p>
     <p><strong>会場名:</strong> <%= @board.venue %></p>
     <p><strong>開催日時:</strong> <%= @board.date_and_time.strftime("%Y-%m-%d") %></p>

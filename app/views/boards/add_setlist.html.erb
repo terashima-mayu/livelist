@@ -4,7 +4,7 @@
   <%= form_with(model: @board, url: update_setlist_board_path(@board), local: true, method: :patch) do |form| %>
     <div class="field">
       <%= form.label :setlist, "セットリスト (各曲を改行で入力)" %>
-      <%= form.text_area :setlist %>
+      <%= form.text_area :setlist, style: 'height: 400px;' %>
     </div>
     <div class="actions">
       <%= form.submit "セットリストを更新", class: 'btn btn-primary' %>

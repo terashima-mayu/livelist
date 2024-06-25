@@ -1,4 +1,6 @@
-<h1>新しいライブ記録を作成する</h1>
+<!-- app/views/boards/edit.html.erb -->
+
+<h1>ライブ記録を編集する</h1>
 
 <%= form_with(model: @board, local: true) do |form| %>
   <div class="form-group">
@@ -31,5 +33,6 @@
     <%= form.text_field :name, class: "form-control", placeholder: "ライブ名を入力してください", required: true %>
   </div>
 
-  <%= form.submit "ライブ記録を作成する", class: "btn btn-primary" %>
+  <%= form.submit "ライブ記録を更新する", class: "btn btn-primary" %>
 <% end %>
+
